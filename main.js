@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
+    const razorpayKey = (import.meta.env && (import.meta.env.RAZORPAY_KEY_ID || import.meta.env.VITE_RAZORPAY_KEY_ID));
     if (!razorpayKey) {
       alert('Payment key is not configured. Switching to Direct UPI QR.');
       switchToUpiQr(total);

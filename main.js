@@ -137,7 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const razorpayKey = (import.meta.env && import.meta.env.VITE_RAZORPAY_KEY_ID) || "rzp_live_TmauRkPfejP2M0";
+    const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
+    if (!razorpayKey) {
+      alert('Payment key is not configured. Switching to Direct UPI QR.');
+      switchToUpiQr(total);
+      return;
+    }
 
     const options = {
       key: razorpayKey,

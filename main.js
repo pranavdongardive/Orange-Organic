@@ -137,8 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const razorpayKey = (import.meta.env && import.meta.env.VITE_RAZORPAY_KEY_ID) || "rzp_live_TmauRkPfejP2M0";
+
     const options = {
-      key: "rzp_live_TmauRkPfejP2M0",
+      key: razorpayKey,
       amount: total * 100, // In paise (1 INR = 100 paise)
       currency: "INR",
       name: "Orange Organic",

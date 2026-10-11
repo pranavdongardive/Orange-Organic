@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const options = {
-      key: "rzp_test_TmaTkUJLdoA4nG",
+      key: "rzp_live_TmauRkPfejP2M0",
       amount: total * 100, // In paise (1 INR = 100 paise)
       currency: "INR",
       name: "Orange Organic",
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
       image: "/honey.png",
       handler: function (response) {
         const paymentId = response.razorpay_payment_id || `pay_${Date.now()}`;
-        completeSuccessfulOrder(paymentId, "Razorpay Gateway (Verified)");
+        completeSuccessfulOrder(paymentId, "Razorpay Gateway (Live)");
       },
       prefill: {
         name: "Pranav",

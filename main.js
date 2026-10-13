@@ -8,12 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartTotalPriceEl = document.getElementById('cart-total-price');
   const checkoutActions = document.getElementById('checkout-actions');
   const checkoutBtn = document.getElementById('checkout-btn');
-  const showUpiQrBtn = document.getElementById('show-upi-qr-btn');
-  const backToRzpBtn = document.getElementById('back-to-rzp-btn');
-  const qrContainer = document.getElementById('checkout-qr-container');
-  const qrCodeImg = document.getElementById('qr-code-img');
-  const qrTotalAmount = document.getElementById('qr-total-amount');
-  const verifyPaymentBtn = document.getElementById('verify-payment-btn');
   const paymentSuccessContainer = document.getElementById('payment-success-container');
   const paymentMethodVal = document.getElementById('payment-method-val');
   const paymentIdVal = document.getElementById('payment-id-val');
@@ -39,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Success handler
   const completeSuccessfulOrder = (paymentId, method) => {
     if (checkoutActions) checkoutActions.style.display = 'none';
-    if (qrContainer) qrContainer.style.display = 'none';
     if (paymentSuccessContainer) paymentSuccessContainer.style.display = 'block';
     if (paymentMethodVal) paymentMethodVal.textContent = method;
     if (paymentIdVal) paymentIdVal.textContent = paymentId;
@@ -55,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateCart = () => {
     cartBtn.textContent = `Cart (${cart.length})`;
     cartItemsContainer.innerHTML = '';
-    if (qrContainer) qrContainer.style.display = 'none';
     if (paymentSuccessContainer) paymentSuccessContainer.style.display = 'none';
     
     if (cart.length === 0) {
@@ -132,15 +124,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Check if Razorpay SDK is loaded
     if (typeof Razorpay === 'undefined') {
-      alert('Razorpay Checkout SDK is still loading or blocked. Switching to Direct UPI QR.');
-      switchToUpiQr(total);
+      alert('Payment system is loading. Please check your internet connection and try again.');
       return;
     }
 
     const razorpayKey = (import.meta.env && (import.meta.env.RAZORPAY_KEY_ID || import.meta.env.VITE_RAZORPAY_KEY_ID));
     if (!razorpayKey) {
-      alert('Payment key is not configured. Switching to Direct UPI QR.');
-      switchToUpiQr(total);
+      alert('Payment configuration is missing. Please contact support.');
       return;
     }
 
@@ -178,53 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
       rzpInstance.open();
     } catch (err) {
       console.error('Razorpay initialization error:', err);
-      switchToUpiQr(total);
+      alert('Unable to initialize payment checkout. Please try again.');
     }
-  });
-
-  // Switch to Direct UPI QR
-  const switchToUpiQr = (total) => {
-    if (!total) {
-      total = 0;
-      cart.forEach(item => total += item.price);
-    }
-    const upiString = `upi://pay?pa=pranavdongardive187@okhdfcbank&pn=OrangeOrganic&am=${total}&cu=INR`;
-    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiString)}`;
-    
-    qrCodeImg.src = qrUrl;
-    qrTotalAmount.textContent = `₹${total}`;
-    
-    checkoutActions.style.display = 'none';
-    qrContainer.style.display = 'block';
-  };
-
-  if (showUpiQrBtn) {
-    showUpiQrBtn.addEventListener('click', () => {
-      let total = 0;
-      cart.forEach(item => total += item.price);
-      if (total > 0) switchToUpiQr(total);
-    });
-  }
-
-  if (backToRzpBtn) {
-    backToRzpBtn.addEventListener('click', () => {
-      qrContainer.style.display = 'none';
-      checkoutActions.style.display = 'flex';
-    });
-  }
-
-  // Direct UPI "I have Paid" Verification Logic
-  verifyPaymentBtn.addEventListener('click', () => {
-    const originalText = verifyPaymentBtn.textContent;
-    verifyPaymentBtn.textContent = 'Verifying UPI...';
-    verifyPaymentBtn.disabled = true;
-    
-    setTimeout(() => {
-      verifyPaymentBtn.textContent = originalText;
-      verifyPaymentBtn.disabled = false;
-      const simulatedUpiRef = `UPI_${Math.random().toString(36).substring(2, 9).toUpperCase()}`;
-      completeSuccessfulOrder(simulatedUpiRef, "Direct UPI (pranavdongardive187@okhdfcbank)");
-    }, 1500);
   });
 
   // Continue Shopping Logic
@@ -257,8 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <li><strong>Inquiries & Support:</strong> Communications and notes sent regarding your orders.</li>
         </ul>
 
-        <h3>2. Safe & Direct UPI Payments</h3>
-        <p>All payments on Orange Organic are facilitated through peer-to-peer UPI transfers. We do <strong>not</strong> collect or store your UPI PIN, debit/credit card credentials, or bank passwords. All financial authentication takes place securely inside your verified UPI application.</p>
+        <h3>2. Safe & Secure Payments</h3>
+        <p>All payments on Orange Organic are processed securely through our verified payment gateway. We do <strong>not</strong> collect or store your card credentials, UPI PIN, or bank passwords. All transactions are protected by industry-standard encryption protocols.</p>
 
         <h3>3. How We Use Your Data</h3>
         <p>Your details are strictly used to fulfill and dispatch your orders, notify you of shipment progress, and address customer service requests.</p>

@@ -155,11 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const paymentId = response.razorpay_payment_id || `pay_${Date.now()}`;
         completeSuccessfulOrder(paymentId, "Razorpay Gateway (Live)");
       },
-      prefill: {
-        name: "Pranav",
-        email: "pranavdongardive187@gmail.com",
-        contact: "7709876513"
-      },
+      prefill: {},
       notes: {
         merchant_store: "Orange Organic",
         items: cart.map(i => i.name).join(', ')
@@ -255,10 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <p><strong>Security First:</strong> Your privacy is our priority. We never sell your personal data or store sensitive banking details.</p>
         </div>
         <h3>1. Information We Collect</h3>
-        <p>When you place an order or contact us at Orange Organic, we collect essential details necessary to serve you:</p>
+        <p>When you place an order at Orange Organic, we collect essential details necessary to serve you:</p>
         <ul>
-          <li><strong>Contact Details:</strong> Your name, delivery address, phone number, and email.</li>
-          <li><strong>Inquiries & Support:</strong> Communications sent to <strong>pranavdongardive187@gmail.com</strong> or via phone/WhatsApp at <strong>+91 77098 76513</strong>.</li>
+          <li><strong>Delivery Details:</strong> Shipping address and recipient contact details required for order fulfillment.</li>
+          <li><strong>Inquiries & Support:</strong> Communications and notes sent regarding your orders.</li>
         </ul>
 
         <h3>2. Safe & Direct UPI Payments</h3>
@@ -271,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>We do not sell, rent, or lease customer records to third parties or marketing networks. All personal records are safeguarded with industry-standard encryption protocols.</p>
 
         <h3>5. Contact & Privacy Requests</h3>
-        <p>If you have any questions about this Privacy Policy or wish to request data updates/deletion, contact us anytime at <a href="mailto:pranavdongardive187@gmail.com"><strong>pranavdongardive187@gmail.com</strong></a> or call <a href="tel:+917709876513"><strong>+91 77098 76513</strong></a>.</p>
+        <p>If you have any questions about this Privacy Policy or wish to request data updates/deletion, please contact our support team.</p>
       `
     },
     terms: {
@@ -285,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>Orange Organic specializes in clean nutrition breakfast items including Orange & Coconut Muesli, Raw Orange Blossom Honey, and Citrus Blossom Granola. Currently, products are offered at a special promotional rate of ₹1 per item. Prices and availability are subject to change without prior notice.</p>
 
         <h3>2. Orders & Payments</h3>
-        <p>All orders are confirmed upon payment initiation via our designated UPI ID (<strong>pranavdongardive187@okhdfcbank</strong>). Please ensure accurate delivery coordinates during order submission.</p>
+        <p>All orders are confirmed upon payment initiation via our designated checkout methods. Please ensure accurate delivery coordinates during order submission.</p>
 
         <h3>3. Product Quality & Proper Storage</h3>
         <p>Because our products are 100% natural and free of chemical preservatives, they should be stored in a cool, dry place away from direct sunlight after opening.</p>
@@ -294,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>All content, branding, logos, package designs, and text appearing on this website are the intellectual property of Orange Organic.</p>
 
         <h3>5. Inquiries & Legal Notices</h3>
-        <p>For any contractual or legal queries, write to us at <a href="mailto:pranavdongardive187@gmail.com"><strong>pranavdongardive187@gmail.com</strong></a> or call <a href="tel:+917709876513"><strong>+91 77098 76513</strong></a>.</p>
+        <p>For any contractual or legal queries, please contact customer support.</p>
       `
     },
     returns: {
@@ -311,17 +307,17 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>To adhere to standard food health and hygiene standards, items must meet the following criteria:</p>
         <ul>
           <li>The product packaging and safety seals must be intact and untampered (unless reporting transit damage).</li>
-          <li>The item must be accompanied by the order confirmation and UPI transaction details.</li>
+          <li>The item must be accompanied by the order confirmation and payment details.</li>
         </ul>
 
         <h3>3. Damaged or Defective Deliveries</h3>
-        <p>If your package arrives crushed or leaking, take a quick photo of the damaged package and reach out to <a href="mailto:pranavdongardive187@gmail.com"><strong>pranavdongardive187@gmail.com</strong></a> or call/WhatsApp <a href="tel:+917709876513"><strong>+91 77098 76513</strong></a> within 48 hours of delivery.</p>
+        <p>If your package arrives crushed or leaking, take a quick photo of the damaged package and reach out to customer support within 48 hours of delivery for prompt assistance.</p>
 
         <h3>4. Refund Processing</h3>
-        <p>Approved refunds are processed directly back to your original payment method (UPI reversal) within <strong>2 to 4 business days</strong>.</p>
+        <p>Approved refunds are processed directly back to your original payment method within <strong>2 to 4 business days</strong>.</p>
 
         <h3>5. How to Initiate a Return</h3>
-        <p>Send an email to <a href="mailto:pranavdongardive187@gmail.com"><strong>pranavdongardive187@gmail.com</strong></a> or text us on WhatsApp at <a href="tel:+917709876513"><strong>+91 77098 76513</strong></a> with your order details.</p>
+        <p>Contact customer support with your order details and photos of the damaged item to initiate a return or replacement.</p>
       `
     },
     shipping: {
@@ -341,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>Promotional free delivery is currently applied to all orders.</p>
 
         <h3>4. Tracking & Support</h3>
-        <p>For shipment tracking or delivery status inquiries, reach out to <a href="mailto:pranavdongardive187@gmail.com"><strong>pranavdongardive187@gmail.com</strong></a> or call <a href="tel:+917709876513"><strong>+91 77098 76513</strong></a>.</p>
+        <p>For shipment tracking or delivery status inquiries, please reach out to customer support.</p>
       `
     }
   };

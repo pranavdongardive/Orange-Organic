@@ -292,7 +292,7 @@ h1, h2, h3, h4 {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3.5rem;
 }
@@ -332,8 +332,7 @@ h1, h2, h3, h4 {
   gap: 0.85rem;
 }
 
-.footer-links h4,
-.footer-contact h4 {
+.footer-links h4 {
   font-size: 1.15rem;
   margin-bottom: 0.5rem;
   color: #ffffff;
@@ -368,94 +367,6 @@ h1, h2, h3, h4 {
 .policy-link-btn:hover {
   color: var(--primary-color);
   transform: translateX(3px);
-}
-
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-desc {
-  color: #999;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 1.2rem;
-}
-
-.contact-cards-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.contact-card {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  background: rgba(255, 122, 0, 0.08);
-  border: 1px solid rgba(255, 122, 0, 0.25);
-  border-radius: 14px;
-  padding: 0.85rem 1.15rem;
-  transition: var(--transition);
-}
-
-.contact-card:hover {
-  background: rgba(255, 122, 0, 0.14);
-  border-color: var(--primary-color);
-  box-shadow: 0 8px 25px rgba(255, 122, 0, 0.15);
-  transform: translateY(-2px);
-}
-
-.contact-icon-bubble {
-  font-size: 1.3rem;
-  background: rgba(255, 122, 0, 0.2);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.contact-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #ff9d42;
-  font-weight: 600;
-  margin-bottom: 0.15rem;
-}
-
-.contact-link,
-.contact-email {
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.92rem;
-  text-decoration: none;
-  word-break: break-all;
-  transition: var(--transition);
-}
-
-.contact-link:hover,
-.contact-email:hover {
-  color: var(--primary-color);
-  text-decoration: underline;
-}
-
-.contact-timing {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  color: #777;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
 }
 
 .footer-bottom {
@@ -618,28 +529,13 @@ h1, h2, h3, h4 {
 
 .policy-modal-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding: 1.2rem 2rem;
   border-top: 1px solid #eee;
   background: #faf8f5;
   flex-wrap: wrap;
   gap: 1rem;
-}
-
-.policy-modal-contact-note {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.policy-modal-contact-note a {
-  color: var(--primary-color);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.policy-modal-contact-note a:hover {
-  text-decoration: underline;
 }
 
 /* Responsive */
